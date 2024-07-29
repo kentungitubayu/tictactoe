@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div class="controls">
+            <div>
+                <label for="mode">Mode:</label>
+                <select id="mode">
+                    <option value="2p">2 Players</option>
+                    <option value="ai">Vs AI</option>
+                </select>
+            </div>
+            <div>
+                <label for="theme">Theme:</label>
+                <select id="theme">
+                    <option value="default">Default</option>
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </select>
+            </div>
+        </div>
+        <div class="scoreboard">
+            <div>Player X: <span id="scoreX">0</span></div>
+            <div>Player O: <span id="scoreO">0</span></div>
+        </div>
+        <div class="board" id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+        <div class="winning-message" id="winningMessage">
+            <div data-winning-message-text></div>
+            <button id="restartButton">Restart</button>
+        </div>
+    </div>
+    <audio id="clickSound" src="click.mp3"></audio>
+    <audio id="winSound" src="win.mp3"></audio>
+    <audio id="drawSound" src="draw.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>

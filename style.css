@@ -1,0 +1,179 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+body.light {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    /* Added position relative for container */
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 5px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cell {
+    width: 150px;
+    height: 150px;
+    background-color: #61dafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+body.light .cell {
+    background-color: #e0e0e0;
+}
+
+body.dark .cell {
+    background-color: #333;
+}
+
+.cell:hover {
+    background-color: #21a1f1;
+}
+
+.cell.x::before {
+    content: "X";
+    color: #ff6f61;
+    animation: appear 0.3s ease-in;
+}
+
+.cell.o::before {
+    content: "O";
+    color: #61ffca;
+    animation: appear 0.3s ease-in;
+}
+
+@keyframes appear {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.winning-message {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.winning-message.show {
+    display: flex;
+}
+
+.restart-button {
+    position: absolute;
+    /* Added absolute positioning for restart button */
+    bottom: 20px;
+    /* Adjust bottom distance as needed */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Center horizontally */
+    padding: 10px 20px;
+    border: none;
+    background-color: #61dafb;
+    color: #282c34;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for Restart button */
+.restart-button:hover {
+    background-color: #21a1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Add box shadow on hover */
+}
+
+/* Winning animation for cells */
+.cell.win::before {
+    animation: zoomIn 0.5s ease forwards;
+    /* Example animation */
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Your existing CSS styles */
+
+/* Particle animation styles */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Custom cursor style */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Responsive design styles */
+@media screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+}
+
+/* Additional animations and styles for enhanced features */
