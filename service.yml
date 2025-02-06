@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tictacto-service
+spec:
+  type: NodePort  # Agar bisa diakses dari luar Minikube
+  selector:
+    app: tictacto
+  ports:
+    - protocol: TCP
+      port: 80        # Port di dalam cluster
+      targetPort: 80  # Port di dalam container
+      nodePort: 30080 # Port yang bisa diakses dari luar (30000-32767)
+

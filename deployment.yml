@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tictacto-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tictacto
+  template:
+    metadata:
+      labels:
+        app: tictacto
+    spec:
+      containers:
+        - name: tictacto-app
+          image: tictacto-app:latest  # Menggunakan image yang kita build
+          imagePullPolicy: Never      # Jangan tarik dari Docker Hub, pakai image lokal
+          ports:
+            - containerPort: 80
+
